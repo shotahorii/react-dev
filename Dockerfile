@@ -11,6 +11,10 @@ RUN npm install -g webpack webpack-cli
 RUN npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader
 RUN npm install --save-dev react react-dom
 
+# below are optional libraries. Comment out if you don't need them
+RUN npm install --save leaflet react-leaflet 
+RUN npm install --save d3
+
 CMD [ "npm", "start" ] 
 # you can do bash and type npm start instead. (Comment out above & remove # below.)
 # CMD ["bash"] 
