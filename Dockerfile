@@ -1,5 +1,5 @@
 # Env for react app development.
-# Run this image with following options: -p 8080:8080 -v $(pwd):/app
+# Run this image with following options: -it -p 8080:8080 -v $(pwd):/app
 
 FROM node:12
 
@@ -15,8 +15,8 @@ RUN npm install --save-dev react react-dom
 RUN npm install --save leaflet react-leaflet 
 RUN npm install --save d3
 
-CMD [ "npm", "start" ] 
-# you can do bash and type npm start instead. (Comment out above & remove # below.)
-# CMD ["bash"] 
+CMD ["bash"] 
+# To start server: $ npm start
+# To bundle js: $ cd app && webpack --mode development
 
 EXPOSE 8080
