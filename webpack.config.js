@@ -3,7 +3,7 @@ const path    = require('path');
 
 module.exports = {
   context: path.join(__dirname, "src"),
-  entry: "./App.js",
+  entry: "./index.js",
   module: {
     rules: [{
       test: /\.jsx?$/,
