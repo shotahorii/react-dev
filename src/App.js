@@ -1,5 +1,8 @@
 import React from 'react';
+import axios from 'axios';
 import LineChart from './components/LineChart';
+
+const server = 'http://ec2-100-26-225-47.compute-1.amazonaws.com/';
 
 class App extends React.Component {
 
@@ -16,7 +19,14 @@ class App extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick() {
+    handleClick(e) {
+
+        axios.get(server)
+            .then((res) => {
+            console.log(res);
+            })
+            .catch(console.error);
+
         this.setState({
             data : [
                 [{x: 0, y: 2},{x: 1, y: 3},{x: 2, y: 4},

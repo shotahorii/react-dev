@@ -64,7 +64,6 @@ class LineChart extends React.Component {
             .style('stroke-width', 2);
 
 
-
         // render axis
         const xAxis = d3.axisBottom()
                 .scale(x.range([0, quadrantWidth]))

@@ -20,5 +20,5 @@ Note2: Don't forget `.` at the end of the command.
 ### Run
 
 ```
-docker run --rm -p 8080:8080 -v $(pwd):/app shotahorii/react-dev-env
+docker run --rm -it -p 8080:8080 -v $(pwd):/app shotahorii/react-dev-env
 ```
