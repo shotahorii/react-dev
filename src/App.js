@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import LineChart from './components/LineChart';
 
-const server = 'http://ec2-23-23-34-98.compute-1.amazonaws.com/';
+const server = 'https://shotahorii.info';
 
 class App extends React.Component {
 
