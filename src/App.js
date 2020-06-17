@@ -3,6 +3,7 @@ import axios from 'axios';
 import LineChart from './components/LineChart';
 
 const server = 'https://shotahorii.info';
+const server2 = 'https://shotahorii.info/todo1';
 
 class App extends React.Component {
 
@@ -17,6 +18,7 @@ class App extends React.Component {
         };
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleClick2 = this.handleClick2.bind(this);
     }
 
     handleClick(e) {
@@ -35,11 +37,22 @@ class App extends React.Component {
             ]
           });
     }
+
+    handleClick2(e) {
+
+        axios.get(server2)
+            .then((res) => {
+            console.log(res);
+            })
+            .catch(console.error);
+
+    }
     
     render() {
         return (<div>
                     <h1> Line chart test </h1>
                     <a href="#" onClick={this.handleClick}> Click me </a>
+                    <a href="#" onClick={this.handleClick2}> Click me2 </a>
                     <LineChart  data={this.state.data} />
                 </div>);
     }
