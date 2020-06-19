@@ -9,6 +9,8 @@ class App extends React.Component {
 
     constructor(props) {
         super(props);
+        this.server = 'https://shotahorii.info/';
+
         this.state = {
             data: [
                 [{x: 0, y: 6},{x: 1, y: 9},{x: 2, y: 6},
@@ -19,6 +21,12 @@ class App extends React.Component {
 
         this.handleClick = this.handleClick.bind(this);
         this.handleClick2 = this.handleClick2.bind(this);
+    }
+
+    componentDidMount() {
+        axios.get(this.server+'api/dublinrestaurants').then(res => {
+            this.setState({items: res.data});
+          });
     }
 
     handleClick(e) {
